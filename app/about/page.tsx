@@ -6,25 +6,14 @@ import { About } from "@/.contentlayer/generated";
 import Link from "next/link";
 import React from "react";
 import { TbPointFilled } from "react-icons/tb";
+import PageTitle from "@/components/PageTitle";
 
 export default function About() {
 
  
   return (
-    <Container title="About Me - Braydon Coyer">
-      <div className="flex items-center space-x-5">
-            <div className="text-black dark:text-white font-libre_baskerville text-3xl ">
-              {" "}
-              Acerca de
-            </div>
-            <div className="text-[#FB5148] dark:text-[#FB5148]">
-              <TbPointFilled />
-            </div>
-            <div className="flex-grow border-t border-gray-400"></div>
-          </div>
-
-     
-     
+    <Container>
+     <PageTitle title={"Acerca"} />
 
       <article
         className="mt-10 text-black dark:text-white font-alliance1  prose-headings:font-spartan 

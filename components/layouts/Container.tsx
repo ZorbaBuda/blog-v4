@@ -31,7 +31,7 @@ export const Container = (props) => {
       <NavMenu />
       <ScrollTop />
       <main
-        className={`flex flex-col mx-auto max-w-7xl justify-center px-4   dark:prose-dark relative `}
+        className={`xl:px-0 px-5 lg:px-5 flex flex-col mx-auto max-w-7xl justify-center relative `}
       >
         <div className="z-10">
           <PageTransition>

@@ -14,6 +14,7 @@ import { useSearchParams } from 'next/navigation'
 import searchPosts from "@/lib/searchPosts";
 import { useEffect, useState } from 'react'
 import Search from '@/components/ui/Search'
+import PageTitle from '@/components/PageTitle'
 
 
 
@@ -34,7 +35,7 @@ export default function page( {
   return (
     <Container>
      
-
+     <PageTitle title={"Búsqueda"} />
       <div className="flex items-center space-x-5">
             <div className="capitalize text-black dark:text-white font-libre_baskerville text-3xl ">
               {`Resultados para ${query}`}

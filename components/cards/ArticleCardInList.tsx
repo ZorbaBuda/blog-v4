@@ -7,30 +7,23 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { Button } from "./ButtonCard";
 import Category from "../tags/Category";
 import { TbPointFilled } from "react-icons/tb";
-import { BsFillTagsFill } from "react-icons/bs";
-import Tag from "../tags/Tag";
 
 type Props = {
   post: Post;
 };
 
 function ArticleCard({ post }: Props) {
-  const { coverImage, slug, date, title, summary, tags, category } = post;
+  const { coverImage, slug, date, title, summary,  category } = post;
 
-  const slug1 = slugify(title).toLowerCase();
+  // TODO whas slugify means
+  const titleSlug = slugify(title).toLowerCase();
   const formattedDate = getFormattedDate(date);
   const imageUrl = `${process.env.GITHUB_URL_IMAGES}${coverImage}`;
-  // console.log(imageUrl)
-  // const immUrl = `https://raw.githubusercontent.com/ZorbaBuda/blog-v3/main/public/${coverImage}`;
-
-  //const patternn = post.pattern? post.pattern : "pattern13";
-  //const patternn = "lavender-lumberjack";
+ 
   return (
     <div className="md:border-b md:border-b-slate-700">
     <div className="  group  p-5 md:pt-8 md:pb-14  border border-spacing-2 border-slate-700
     md:border-none   ">
-      {/* <div className="  flex flex-wrap-reverse justify-between items-center"> */}
-       {/* <div className="md:grid md:grid-cols-2 md:gap-20 flex flex-wrap-reverse justify-between items-center"> */}
        <div className="md:grid lg:grid-cols-3 md:grid-cols-2 md:gap-10 grid-cols-1 justify-between items-center">
       
          <Link
@@ -87,12 +80,12 @@ function ArticleCard({ post }: Props) {
 
         
           <Link className="no-underline" href={`/${slug}`}>
-            <div className="hover:underline mt-3 font-recoleta font-extrabold   tracking-wider lg:text-5xl text-3xl  text-black dark:text-white">
+            <div className="hover:underline mt-3 font-recoleta_bold   tracking-wide lg:text-5xl text-3xl  text-black dark:text-white">
               {title}
             </div>
           </Link>
 
-          <div className="font-recoleta font-bold dark:text-white text-2xl text-black mt-1">
+          <div className="font-recoleta_bold dark:text-white text-2xl text-black mt-1">
             {" "}
             {post.bookAuthor ? post.bookAuthor : 'Anonymous'}
             {', '}
@@ -106,7 +99,7 @@ function ArticleCard({ post }: Props) {
 
          
 
-          <Button href={`/${slug}`}>Leer artículo</Button>
+          <Button href={`/${slug}`}>Leer post</Button>
         </div>
 
 

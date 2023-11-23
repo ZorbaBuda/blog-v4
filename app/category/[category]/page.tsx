@@ -11,6 +11,7 @@ import { allCoreContent, sortPosts } from '@/lib/postsUtils'
 import ScrollTop from '@/components/ScrollTop'
 import { TbPointFilled } from 'react-icons/tb'
 import ArticleList from '@/components/articleListLayouts/ArticleList'
+import PageTitle from '@/components/PageTitle'
 
 
 // type CategoryParam = {
@@ -61,18 +62,8 @@ export default function page({ params} : { params: { category: string }}) {
 
   return (
     <Container>
-      <ScrollTop />
-
-      <div className="flex items-center space-x-5">
-            <div className="capitalize text-black dark:text-white font-libre_baskerville text-3xl ">
-              {category}
-             
-            </div>
-            <div className="text-primary dark:text-primary">
-              <TbPointFilled />
-            </div>
-            <div className="flex-grow border-t border-gray-400"></div>
-          </div>
+    
+    <PageTitle title={category} />
           
         <ArticleList articles={sortedCategoryPosts} showEndMessage fullHeight />
   

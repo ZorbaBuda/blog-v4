@@ -30,7 +30,9 @@ const config: Config = {
         pt_serif_regular:["PT-SERIF"],
         recoleta:['RECOLETA'],
         recoleta_bold:['RECOLETA-BOLD'],
-        minion:['MINION']
+        minion:['MINION'],
+        inter:['INTER'],
+        inter_semibold:['INTER-SEMIBOLD']
       },
       colors: {
         transparent: 'transparent',

@@ -21,7 +21,7 @@ const ScrollTop = () => {
   
   return (
     <div
-      className={`fixed bottom-8 right-8 hidden  gap-10 ${show ? 'md:flex' : 'md:hidden'}`}
+      className={`fixed bottom-8 right-8   gap-10 ${show ? 'md:flex' : 'md:hidden'}`}
     >
       
       <button

@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 
-
-
-
 @font-face {
   font-family: "ROBOTO-REGULAR";
   src: url("../public/fonts/Roboto/Roboto-Regular.ttf");
@@ -76,6 +73,16 @@
 }
 
 
+@font-face {
+  font-family: "INTER-SEMIBOLD";
+  src: url("../public/fonts/Inter/Inter-SemiBold.ttf");
+}
+
+
+@font-face {
+  font-family: "INTER";
+  src: url("../public/fonts/inter/Inter-Regular.ttf");
+}
 
 
 
@@ -113,7 +120,7 @@
 
   
 .header {
-  @apply w-full z-50 border-y-[1px] font-open_sans uppercase 
+  @apply w-full mx-auto z-50 border-y-[1px] font-open_sans uppercase
   border-[#383A3C] sticky
   dark:bg-[#121212] dark:text-white
   text-black bg-[#EEEEEE]
@@ -122,14 +129,14 @@
 
 /* // navbar items */
 .navbar {
-  @apply mx-auto max-w-7xl relative flex flex-wrap items-center justify-between
-   lg:h-16  h-auto   py-3 lg:px-0
+  @apply mx-auto  max-w-7xl relative flex flex-wrap items-center justify-between
+   lg:h-16  h-auto   py-3  xl:px-0 px-2 lg:px-5
   
   ;
 }
 
 .navbar-brand {
-  @apply text-2xl font-open_sans font-semibold text-black dark:text-white  ;
+  @apply text-2xl font-open_sans font-bold text-black dark:text-white  ;
   image {
     @apply max-h-full max-w-full;
   }

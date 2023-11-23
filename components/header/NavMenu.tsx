@@ -2,15 +2,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BsChevronDown } from "react-icons/bs";
 import ThemeSwitcher from "../ThemeSwitcher";
 import menu from "./menu.json";
-import { IoSearch } from "react-icons/io5";
 import React from "react";
 import config from './config.json'
 //TODO use mdx to dropdown children
-import { allAbouts } from "@/.contentlayer/generated";
 import SearchNav from "./SearchNav";
+import { allAbouts } from "@/.contentlayer/generated";
 
 // child navigation link interface
 export interface IChildNavigationLink {
@@ -31,10 +29,6 @@ export function NavMenu({}) {
   const { main } = menu;
   const { navigation_button, settings } = config;
 
-
-  // states declaration
-  const [searchModal, setSearchModal] = useState(false);
-
   //toggle menu
   const [showMenu, setShowMenu] = useState(false);
 
@@ -42,9 +36,6 @@ export function NavMenu({}) {
     setShowMenu(!showMenu)
   }
 
-  // Router
-  // const router = useRouter();
-  // const isActive = usePathname() === href;
   const pathname = usePathname();
 
    // scroll to top on route change
@@ -54,6 +45,7 @@ export function NavMenu({}) {
 
 
   //not part of Gekky
+  // TODO this is not working fine
   //nabvar visible on scroll up
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -80,9 +72,9 @@ export function NavMenu({}) {
   return (
     <>
      {/* <header className={`header ${visible ? "top-0" : "hidden"}`}> */}
-     <header className={`header`}>
+     <header className={` header`}>
        {/* <header className="header">  */}
-      <nav className="navbar container px-1 sm:px-8">
+      <nav className="navbar container ">
         <div className="order-1  sm:order-1">{/* <Logo /> */} LOGO_IMAGE</div>
 
              {/* navbar toggler */}

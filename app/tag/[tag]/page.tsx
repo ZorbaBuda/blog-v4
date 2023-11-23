@@ -9,6 +9,7 @@ import BookResumeList from '@/components/articleListLayouts/PostsListGrid'
 import { allCoreContent, sortPosts } from '@/lib/postsUtils'
 import { allPosts } from '@/.contentlayer/generated'
 import ArticleList from '@/components/articleListLayouts/ArticleList'
+import PageTitle from '@/components/PageTitle'
 
 export default function page({ params} : { params: { tag: string }}) {
 
@@ -22,6 +23,7 @@ export default function page({ params} : { params: { tag: string }}) {
 
   return (
     <Container>
+      <PageTitle title={`Etiquetas "${tag}"`} />
     <div className="mt-10 flex  flex-wrap">
     {tagKeys.length === 0 && 'No tags found.'}
     {tagKeys.map((t) => {

@@ -4,6 +4,7 @@ import Image from "next/image";
 import getFormattedDate from "@/lib/getFormattedDate";
 import Category from "../tags/Category";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import "./patterns.scss"
 
 type Props = {
   post: Post;
@@ -13,7 +14,7 @@ export default function DocHeading({ post }: Props) {
   const imageUrl = `${process.env.GITHUB_URL_IMAGES}${post.coverImage}`;
   const formattedDate = getFormattedDate(post.date);
   return (
-    
+    <div className="patterns pt28">
     <article className=" flex  flex-col gap-5 justify-center   text-black dark:text-white">
      <div className="flex justify-center">
       <div className=" flex flex-col  gap-5 ">
@@ -49,5 +50,6 @@ export default function DocHeading({ post }: Props) {
       />
       </div>
     </article>
+    </div>
   );
 }
