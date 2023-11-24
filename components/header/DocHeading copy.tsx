@@ -1,3 +1,4 @@
+'use client'
 import { Post } from "@/.contentlayer/generated";
 import React from "react";
 import Image from "next/image";
@@ -5,17 +6,21 @@ import getFormattedDate from "@/lib/getFormattedDate";
 import Category from "../tags/Category";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import "./patterns.scss"
+import { useTheme } from "next-themes";
 
 type Props = {
   post: Post;
 };
 
 export default function DocHeading({ post }: Props) {
-  const imageUrl = `${process.env.GITHUB_URL_IMAGES}${post.coverImage}`;
+  const imageUrl = `${process.env.NEXT_PUBLIC_GITHUB_URL_IMAGES}${post.coverImage}`;
   const formattedDate = getFormattedDate(post.date);
+
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  console.log(theme)
   return (
-    
-    <article className="patterns pt1 flex  flex-col gap-5 justify-center   text-black dark:text-white">
+    <div className={`${theme === 'dark' ? 'patterns pt28' : 'patterns pt13'}`}>
+    <article className=" flex  flex-col gap-5 justify-center   text-black dark:text-white">
      <div className="flex justify-center">
       <div className=" flex flex-col  gap-5 ">
       <div className="text-black dark:text-white lg:text-5xl text-4xl  font-bold font-recoleta_bold ">
@@ -50,5 +55,6 @@ export default function DocHeading({ post }: Props) {
       />
       </div>
     </article>
+    </div>
   );
 }

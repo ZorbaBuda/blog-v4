@@ -1,32 +1,45 @@
-import Link from 'next/link'
-import siteMetadata from '@/data/siteMetadata'
-import SocialIcon from '@/components/social-icons'
+"use client";
 
-export default function Footer() {
+import Logo from "@/components/Logo";
+
+import config from "@/data/config.json";
+import menu from "@/data/menu.json";
+import { markdownify } from "@/lib/textConverter";
+import Link from "next/link";
+
+const Footer = () => {
+  const { copyright } = config.params;
+
   return (
-    <footer className='mt-10'>
-      <hr className='hr'></hr>
-      <div className=" py-16 flex flex-col items-center">
-        {/* <div className="mb-3 flex space-x-4">
-          <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} />
-          <SocialIcon kind="github" href={siteMetadata.github} size={6} />
-          <SocialIcon kind="facebook" href={siteMetadata.facebook} size={6} />
-          <SocialIcon kind="youtube" href={siteMetadata.youtube} size={6} />
-          <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} />
-          <SocialIcon kind="twitter" href={siteMetadata.twitter} size={6} />
-        </div> */}
-        <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>Primal Ideas</div>
+    <footer className="bg-[#f6f6f6] dark:bg-[#222222]">
+      <div className="container">
+        <div className="max-w-7xl mx-auto row items-center py-10 ">
+          <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">
+            <Logo />
+          </div>
+          <div className="mb-8 text-center lg:col-6 lg:mb-0">
+            <ul>
+              {menu.footer.map((menu) => (
+                <li className="m-3 inline-block" key={menu.name}>
+                  <Link href={menu.url}>{menu.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:mt-0 lg:text-right">
+            <div>social Icons</div>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-border py-7 dark:border-[#3E3E3E]">
+        <div className="container inline-flex justify-center text-[#B4AFB6] dark:text-darkmode-light">
+        <div>Primal Ideas</div>
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
-         
         </div>
-        {/* <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
-            Tailwind Nextjs Theme
-          </Link>
-        </div> */}
       </div>
     </footer>
-  )
-}
+  );
+};
+
+export default Footer;

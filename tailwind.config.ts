@@ -37,8 +37,8 @@ const config: Config = {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        'primary': '#FB5148',
-        "secondary": '#e65100',
+        'primary': '#C11812',
+        "secondary": '#ECB320',
         gray: colors.gray,
       
       },

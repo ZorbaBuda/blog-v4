@@ -98,14 +98,15 @@ const TableOfContents = ({ source }: TOCProps) => {
 
 
   return (
-    <div className=" ">
+    <div className="font-minion text-lg ">
       <div 
           onClick={() => {
             setIsTOCVisible(!isTOCVisible);
           }}
-         className="flex items-center text-black dark:text-white text-base gap-4 hover:text-[#FB5148] max-w-fit">
+         className="flex items-center text-black dark:text-white  gap-4
+          hover:text-primary max-w-fit ">
         <div className="text-lg">Contenidos</div>
-        <button className="text-2xl "
+        <button className=" "
          
           type="button"
         >
@@ -113,7 +114,7 @@ const TableOfContents = ({ source }: TOCProps) => {
         </button>
       </div>
       {isTOCVisible && (
-        <div className="pb-10 ml-7 text-base">
+        <div className="pb-10 ml-7 ">
           {headings.map((heading, index) => {
             return (
               <div  key={index} className="mt-[10px] ">

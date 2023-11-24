@@ -4,6 +4,10 @@
       "name": "Blog",
       "url": "/category/writings"
     },
+    {
+      "name": "Posts",
+      "url": "/posts"
+    },
    
     {
       "name": "Categorias",
@@ -31,11 +35,8 @@
     {
       "name": "Acerca",
       "url": "/about"
-    },
-    {
-      "name": "Contacto",
-      "url": "/contact"
     }
+   
    
   ],
   "footer": [
@@ -44,16 +45,12 @@
       "url": "/"
     },
     {
-      "name": "About",
+      "name": "Acerca",
       "url": "/about"
     },
     {
-      "name": "Contact",
+      "name": "Contacto",
       "url": "/contact"
-    },
-    {
-      "name": "Privacy Policy",
-      "url": "#"
     }
   ]
 }

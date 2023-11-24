@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeSwitcher from "../ThemeSwitcher";
-import menu from "./menu.json";
+import menu from "@/data/menu.json";
 import React from "react";
-import config from './config.json'
+import config from '@/data/config.json'
 //TODO use mdx to dropdown children
 import SearchNav from "./SearchNav";
 import { allAbouts } from "@/.contentlayer/generated";

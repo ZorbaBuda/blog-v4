@@ -2,7 +2,8 @@ import siteMetadata from '@/data/siteMetadata'
 //import ListLayout from '@/layouts/ListLayoutWithTags'
 //import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
-import categoryData from '@/content/category-files.json'
+// import categoryData from '@/content/category-files.json'
+import { allAbouts } from '@/.contentlayer/generated'
 import { Container } from '@/components/layouts/Container'
 import BookResumeList from '@/components/articleListLayouts/PostsListGrid'
 import { allPosts } from '@/.contentlayer/generated'
@@ -44,8 +45,8 @@ import PageTitle from '@/components/PageTitle'
 
 export default function page({ params} : { params: { category: string }}) {
 
-  const categoryKeys = Object.keys(categoryData)
-  
+  // const categoryKeys = Object.keys(categoryData)
+  const categoryKeys = allAbouts[0].categories
   
   const categoryDocs : Post[] = []
   

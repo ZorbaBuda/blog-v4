@@ -24,7 +24,7 @@ const Category = ({ text }: Props) => {
    
        cursor-pointer lg:text-xl font-open_sans font-semibold
          max-w-fit no-underline hover:underline
-    capitalize  text-[#FB5148]
+    capitalize  text-primary
   `}
   >
     {text}

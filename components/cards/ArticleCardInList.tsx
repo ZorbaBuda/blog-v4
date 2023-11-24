@@ -21,9 +21,12 @@ function ArticleCard({ post }: Props) {
   const imageUrl = `${process.env.GITHUB_URL_IMAGES}${coverImage}`;
  
   return (
-    <div className="md:border-b md:border-b-slate-700">
-    <div className="  group  p-5 md:pt-8 md:pb-14  border border-spacing-2 border-slate-700
-    md:border-none   ">
+    // <div className="dark:bg-[#222222] md:border-b md:border-b-slate-700">
+    <div className=" md:border-b md:border-b-slate-700">
+    {/* <div className="  group  p-5 md:pt-8 md:pb-14  border border-spacing-2 border-slate-700
+    md:border-none   "> */}
+    <div className="  group  p-5 md:pt-8 md:pb-14  
+    md:border-none border border-spacing-2 border-slate-700   ">
        <div className="md:grid lg:grid-cols-3 md:grid-cols-2 md:gap-10 grid-cols-1 justify-between items-center">
       
          <Link
@@ -31,7 +34,7 @@ function ArticleCard({ post }: Props) {
            lg:h-[273px] lg:w-[348px]  md:h-[273px] md:w-[348px] sm:h-[273px] sm:container container h-[313px]
              bg-[#EEEEEE] dark:bg-[#252525] rounded-sm
           "
-          href={`/${slug}`}
+          href={`/posts/${slug}`}
         >
         {category === 'writings' ? (
          
@@ -79,27 +82,30 @@ function ArticleCard({ post }: Props) {
          </div>
 
         
-          <Link className="no-underline" href={`/${slug}`}>
-            <div className="hover:underline mt-3 font-recoleta_bold   tracking-wide lg:text-5xl text-3xl  text-black dark:text-white">
+          <Link className="no-underline"    href={`/posts/${slug}`}>
+            <div className="hover:text-secondary dark:hover:text-secondary transition 
+            duration-500 mt-3 font-lora font-bold   tracking-wide lg:text-5xl text-3xl 
+             text-black dark:text-white">
               {title}
             </div>
           </Link>
 
-          <div className="font-recoleta_bold dark:text-white text-2xl text-black mt-1">
+          <div className="font-lora font-semibold dark:text-white text-2xl text-black mt-1">
             {" "}
             {post.bookAuthor ? post.bookAuthor : 'Anonymous'}
             {', '}
             {post.bookYear ? post.bookYear : 'No year'}
           </div>
 
-          <div className="font-open_sans dark:text-white text-black leading-normal  text-base mt-2 tracking-normal  ">
+          <div className="font-minion dark:text-white text-black leading-normal  lg:text-xl text-lg mt-2 
+          tracking-normal  ">
             {" "}
             {summary}
           </div>
 
          
 
-          <Button href={`/${slug}`}>Leer post</Button>
+          <Button    href={`/posts/${slug}`}>Leer post</Button>
         </div>
 
 

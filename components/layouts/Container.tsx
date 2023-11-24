@@ -43,9 +43,10 @@ export const Container = (props) => {
             </div>
             {children}
           </PageTransition>
-          <Footer />
+          
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

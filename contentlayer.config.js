@@ -6,7 +6,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import  {extractTocHeadings } from './lib/remark-tok-headings'
 //import createCategoryIndex from './lib/createCategoryIndex'
-
+import GithubSlugger from "github-slugger"
 
 const BLOG_DIRECTORY = 'content';
 const SYNC_INTERVAL = 1000 * 60;
@@ -32,7 +32,29 @@ export const About = defineDocumentType(() => ({
         type: 'string',
         resolve: (doc) => doc._raw.sourceFilePath,
       },
-       toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
+      //  toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
+      toc:{
+        type: "json",
+        resolve: async (doc) => {
+  
+          const regulrExp = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+          const slugger = new GithubSlugger();
+          const headings = Array.from(doc.body.raw.matchAll(regulrExp)).map(({groups}) => {
+            const flag = groups?.flag;
+            const content = groups?.content;
+  
+            return {
+              level: flag?.length == 1 ? "one" : flag?.length == 2 ? "two" : "three",
+              text: content,
+              slug: content ? slugger.slug(content) : undefined
+            }
+  
+          })
+  
+  
+          return headings;
+        }
+      }
     },
 
 }))
@@ -162,15 +184,16 @@ export default makeSource((sourceKey = 'main') => ({
           cwd: process.cwd(),
           rehypePlugins: [
             rehypeSlug,
-            [
-              rehypeAutolinkHeadings,
-              {
-                properties: {
-                  className: ["subheading-anchor"],
-                  ariaLabel: "Link to section",
-                },
-              },
-            ],
+            // [
+            //   rehypeAutolinkHeadings,
+            //   {
+            //     properties: {
+            //       className: ["subheading-anchor"],
+            //       ariaLabel: "Link to section",
+            //     },
+            //   },
+            // ],
+            [rehypeAutolinkHeadings, {behavior: "append"}]
           ]
         },
          onSuccess: async (importData) => {
