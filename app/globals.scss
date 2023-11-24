@@ -32,6 +32,11 @@
 }
 
 @font-face {
+  font-family: "CRIMSON_PRO";
+  src: url("../public/fonts/Crimson_Pro/CrimsonPro-Regular.ttf");
+}
+
+@font-face {
   font-family: "GLOOCK";
   src: url("../public/fonts/Gloock/Gloock-Regular.otf");
 }
@@ -84,6 +89,10 @@
   src: url("../public/fonts/inter/Inter-Regular.ttf");
 }
 
+@font-face {
+  font-family: "SOURCE-SERIF";
+  src: url("../public/fonts/Source_Serif_4/SourceSerif4-Regular.ttf");
+}
 
 
 @layer components {

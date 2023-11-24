@@ -11,13 +11,13 @@ const Footer = () => {
   const { copyright } = config.params;
 
   return (
-    <footer className="bg-[#f6f6f6] dark:bg-[#222222]">
+    <footer className="bg-[#f6f6f6] dark:bg-[#222222] mt-10">
       <div className="container">
-        <div className="max-w-7xl mx-auto row items-center py-10 ">
-          <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">
+        <div className=" max-w-7xl  items-center py-5 flex mx-auto ">
+          {/* <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">
             <Logo />
-          </div>
-          <div className="mb-8 text-center lg:col-6 lg:mb-0">
+          </div> */}
+          <div className="flex items-center mx-auto ">
             <ul>
               {menu.footer.map((menu) => (
                 <li className="m-3 inline-block" key={menu.name}>
@@ -26,9 +26,9 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:mt-0 lg:text-right">
+          {/* <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:mt-0 lg:text-right">
             <div>social Icons</div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="border-t border-border py-7 dark:border-[#3E3E3E]">

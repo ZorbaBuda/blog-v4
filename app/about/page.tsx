@@ -16,12 +16,13 @@ export default function About() {
      <PageTitle title={"Acerca"} />
 
       <article
-        className="mt-10 text-black dark:text-white font-alliance1  prose-headings:font-spartan 
-          prose lg:prose-xl md:prose-lg sm:prose-base 
-          prose-headings:text-slate-800 dark:prose-headings:text-white  
-          max-w-none md:px-5 sm:px-5 lg:px-0
-          
-          "
+       className=" mt-4 text-black dark:text-white font-source_serif  prose-headings:font-minion
+       prose lg:prose-2xl  sm:prose-lg  md:prose-lg prose-base
+       prose-headings:text-black dark:prose-headings:text-slate-800  
+       prose-headings:text-2xl tracking-normal md:leading-8 leading-7
+       max-w-none md:px-5 sm:px-5 lg:px-0  
+       
+       "
       >
         <MDXComponents code={allAbouts[0].body.code} />
         {/* <Component

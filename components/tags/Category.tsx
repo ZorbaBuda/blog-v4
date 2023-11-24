@@ -20,21 +20,32 @@ const Category = ({ text }: Props) => {
   return (
     <Link
     href={`/category/${text}`}
-    className={`
-   
-       cursor-pointer lg:text-xl font-open_sans font-semibold
-         max-w-fit no-underline hover:underline
-    capitalize  text-primary
-  `}
+    className="
+    tracking-wider rounded-sm py-1 px-4   cursor-pointer
+        text-xs  no-underline font-bold max-w-fit font-crimson_text uppercase
+         bg-gray-300 dark:bg-[#252525]
+          text-[#252525] dark:text-slate-300
+           hover:bg-gray-500  dark:hover:text-slate-500"
   >
-    {text}
+    {text.split(' ').join('-')}
   </Link>
+  //   <Link
+  //   href={`/category/${text}`}
+  //   className={`
+   
+  //      cursor-pointer lg:text-xl font-open_sans font-semibold
+  //        max-w-fit no-underline hover:underline
+  //   capitalize  text-primary
+  // `}
+  // >
+  //   {text}
+  // </Link>
     // <Link
     //   href={`/category/${text}`}
     //   className={`
     //   ${colors[text]}
     //   tracking-wider rounded-sm py-1 px-4   cursor-pointer
-    //       text-xs max-w-fit no-underline
+    //       text-xs max-w-fit no-underline font-open_sans
     //   uppercase  text-slate-300 
     // `}
     // >

@@ -83,7 +83,7 @@ function ArticleCard({ post }: Props) {
 
         
           <Link className="no-underline"    href={`/posts/${slug}`}>
-            <div className="hover:text-secondary dark:hover:text-secondary transition 
+            <div className="hover:text-primary dark:hover:text-primary transition 
             duration-500 mt-3 font-lora font-bold   tracking-wide lg:text-5xl text-3xl 
              text-black dark:text-white">
               {title}
@@ -97,7 +97,7 @@ function ArticleCard({ post }: Props) {
             {post.bookYear ? post.bookYear : 'No year'}
           </div>
 
-          <div className="font-minion dark:text-white text-black leading-normal  lg:text-xl text-lg mt-2 
+          <div className="font-source_serif dark:text-white text-black leading-normal  lg:text-xl text-base mt-2 
           tracking-normal  ">
             {" "}
             {summary}

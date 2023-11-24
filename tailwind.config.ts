@@ -32,7 +32,9 @@ const config: Config = {
         recoleta_bold:['RECOLETA-BOLD'],
         minion:['MINION'],
         inter:['INTER'],
-        inter_semibold:['INTER-SEMIBOLD']
+        inter_semibold:['INTER-SEMIBOLD'],
+        crimson_pro:["CRIMSON_PRO"],
+        source_serif:["SOURCE-SERIF"]
       },
       colors: {
         transparent: 'transparent',
