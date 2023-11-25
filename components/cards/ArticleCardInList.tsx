@@ -18,7 +18,7 @@ function ArticleCard({ post }: Props) {
   // TODO whas slugify means
   const titleSlug = slugify(title).toLowerCase();
   const formattedDate = getFormattedDate(date);
-  const imageUrl = `${process.env.GITHUB_URL_IMAGES}${coverImage}`;
+  const imageUrl = `${process.env.NEXT_PUBLIC_GITHUB_URL_IMAGES}${coverImage}`;
  
   return (
     // <div className="dark:bg-[#222222] md:border-b md:border-b-slate-700">
@@ -85,7 +85,7 @@ function ArticleCard({ post }: Props) {
           <Link className="no-underline"    href={`/posts/${slug}`}>
             <div className="hover:text-primary dark:hover:text-primary transition 
             duration-500 mt-3 font-lora font-bold   tracking-wide lg:text-5xl text-3xl 
-             text-black dark:text-white link link-underline link-underline-black">
+             text-black dark:text-white ">
               {title}
             </div>
           </Link>

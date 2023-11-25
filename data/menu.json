@@ -11,7 +11,7 @@
    
     {
       "name": "Categorias",
-      "url": "/category/all",
+      "url": "/category",
       "hasChildren": true,
       "children": [
         {

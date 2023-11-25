@@ -26,6 +26,8 @@ export interface INavigationLink {
 }
 
 export function NavMenu({}) {
+
+  const categories = allAbouts[0].categories
   // distructuring the main menu from menu object
   const { main } = menu;
   const { navigation_button, settings } = config;
@@ -129,7 +131,7 @@ export function NavMenu({}) {
                     }`}
                   >
                     <Link
-                    href={`/category/all`}
+                    href={`/category`}
                    
                   >
                     {menu.name}
@@ -140,7 +142,23 @@ export function NavMenu({}) {
                     </svg>
                   </span>
                   <ul className="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
-                    {menu.children?.map((child, i) => (
+                  {categories?.map((child, i) => (
+                      <li className="nav-dropdown-item" key={`children-${i}`}>
+                        <Link
+                          href={`/category/${child}`}
+                          className={`nav-dropdown-link block ${
+                            (pathname === `${child}/` ||
+                              pathname === child) &&
+                            "text-[#FB5148]"
+                          }`}
+                        >
+                          {child}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                   
+                    {/* {menu.children?.map((child, i) => (
                       <li className="nav-dropdown-item" key={`children-${i}`}>
                         <Link
                           href={child.url}
@@ -154,7 +172,7 @@ export function NavMenu({}) {
                         </Link>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </li>
               ) : (
                 <li className="nav-item nav-dropdown group relative ">

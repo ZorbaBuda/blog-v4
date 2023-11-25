@@ -17,9 +17,9 @@ export default function DocHeading({ post }: Props) {
 
   return (
     <div className={``}>
-      <article className="lg:grid lg:grid-cols-2 lg:items-center mx-auto max-w-4xl flex  flex-col gap-3 justify-center   text-black dark:text-white">
-        <div className="flex justify-center">
-          <div className=" bg-red-400 flex flex-col  gap-5 ">
+      <article className="lg:grid lg:grid-cols-3 lg:items-center mx-auto max-w-4xl flex  flex-col gap-3 justify-center   text-black dark:text-white">
+        <div className="flex justify-center lg:justify-normal lg:col-span-2">
+          <div className="  flex flex-col  gap-5 ">
             <div className="text-black dark:text-white lg:text-5xl text-4xl  font-lora font-bold uppercase  tracking-wide ">
               {post.title}
             </div>
@@ -39,7 +39,7 @@ export default function DocHeading({ post }: Props) {
             </div>
           </div>
         </div>
-        <div className="bg-red-300 flex justify-center">
+        <div className=" flex justify-center">
           <Image
             priority={true}
             className="rounded-md lg:ml-0 ml-3 object-cover my-0 

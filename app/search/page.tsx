@@ -2,13 +2,8 @@
 import siteMetadata, { search } from '@/data/siteMetadata'
 //import ListLayout from '@/layouts/ListLayoutWithTags'
 //import { genPageMetadata } from 'app/seo'
-import { Metadata } from 'next'
-import categoryData from '@/content/category-files.json'
+
 import { Container } from '@/components/layouts/Container'
-import BookResumeList from '@/components/articleListLayouts/PostsListGrid'
-import type { Post } from '@/.contentlayer/generated'
-import { allCoreContent, sortPosts } from '@/lib/postsUtils'
-import { TbPointFilled } from 'react-icons/tb'
 import ArticleList from '@/components/articleListLayouts/ArticleList'
 import { useSearchParams } from 'next/navigation'
 import searchPosts from "@/lib/searchPosts";
@@ -34,24 +29,27 @@ export default function page( {
  
   return (
     <Container>
-     
+      <div className='flex flex-col gap-5'>
      <PageTitle title={"Búsqueda"} />
-      <div className="flex items-center space-x-5">
-            <div className="capitalize text-black dark:text-white font-libre_baskerville text-3xl ">
-              {`Resultados para ${query}`}
+
+      <div className="flex items-center justify-center">
+            <div className=" text-black dark:text-white font-libre_baskerville text-3xl ">
+             {posts && posts.length > 0 ? (
+              `Mostrando ${posts.length} resultados para '${query}'`
+             ) : (
+              `No hay resultados para '${query}'`
+             )
+            }        
              
             </div>
-            <div className="text-primary dark:text-primary">
-              <TbPointFilled />
-            </div>
-            <div className="flex-grow border-t border-gray-400"></div>
+           
           </div>
           <Search />
 
          
           
          <ArticleList articles={posts} showEndMessage fullHeight />  
-  
+   </div>
 
     </Container>
   )}
