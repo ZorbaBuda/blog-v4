@@ -1,13 +1,18 @@
 'use client';
 
+import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
+import { IoSearch } from "react-icons/io5";
 
 
 export default function Search() {
 
   const searchParams = useSearchParams()
   const pathname = usePathname()
+  const router = useRouter()
   const { replace } = useRouter()
+  const [paramsSearch, setParamsSearch] = useState<string>('')
 
   function handleSearch(term: string) {
     const params = new URLSearchParams(searchParams)
@@ -16,7 +21,13 @@ export default function Search() {
     } else {
       params.delete('s');
     }
-    replace(`${pathname}?${params.toString()}`)
+    replace(`/search?${params.toString()}`)
+    setParamsSearch(`/search?${params.toString()}`)
+  }
+
+  function handleResults(){
+    //  router.push(`/search?${paramsSearch.toString()}`)
+     router.push(paramsSearch)
   }
 
   return (
@@ -32,6 +43,10 @@ export default function Search() {
         }}
         defaultValue={searchParams.get('s')?.toString()}
       />
+      <button 
+      className="text-3xl "
+      onClick={handleResults}
+      >Search</button>
     </div>
   );
 }

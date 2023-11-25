@@ -85,7 +85,7 @@ function ArticleCard({ post }: Props) {
           <Link className="no-underline"    href={`/posts/${slug}`}>
             <div className="hover:text-primary dark:hover:text-primary transition 
             duration-500 mt-3 font-lora font-bold   tracking-wide lg:text-5xl text-3xl 
-             text-black dark:text-white">
+             text-black dark:text-white link link-underline link-underline-black">
               {title}
             </div>
           </Link>

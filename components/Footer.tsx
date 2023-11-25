@@ -12,12 +12,13 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#f6f6f6] dark:bg-[#222222] mt-10">
-      <div className="container">
-        <div className=" max-w-7xl  items-center py-5 flex mx-auto ">
-          {/* <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">
+     
+     <div className="flex flex-col justify-center">
+        <div className=" min-w-full   items-center py-5 flex justify-around ">
+           <div className="  ">
             <Logo />
-          </div> */}
-          <div className="flex items-center mx-auto ">
+          </div> 
+          <div className="flex items-center  ">
             <ul>
               {menu.footer.map((menu) => (
                 <li className="m-3 inline-block" key={menu.name}>
@@ -29,10 +30,11 @@ const Footer = () => {
           {/* <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:mt-0 lg:text-right">
             <div>social Icons</div>
           </div> */}
-        </div>
+        
       </div>
-      <div className="border-t border-border py-7 dark:border-[#3E3E3E]">
-        <div className="container inline-flex justify-center text-[#B4AFB6] dark:text-darkmode-light">
+      </div>
+      <div className="flex justify-center border-t border-border py-7 dark:border-[#3E3E3E]">
+        <div className="gap-x-3 container flex justify-center text-[#B4AFB6] dark:text-darkmode-light">
         <div>Primal Ideas</div>
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>

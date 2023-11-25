@@ -1,11 +1,12 @@
 "use client";
 import config from "@/lib/config.json";
 import { getListPage } from "@/lib/contentParser";
-import PageHeader from "@/components/PageHeader";
+// import PageHeader from "@/components/PageHeader";
 import SeoMeta from "@/components/SeoMeta";
 import { Container } from "@/components/layouts/Container";
 import { useState, useRef } from "react";
 import { sendContactForm } from '@/lib/firebaseContactForm'
+import PageTitle from "@/components/PageTitle";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -70,6 +71,7 @@ const Contact = () => {
         description={description}
         image={image}
       /> */}
+      <PageTitle title={"Contacto"} />
 
       <div className="py-10  grid grid-cols-1 lg:grid-cols-2 justify-between gap-10">
         <div className="flex flex-col gap-5">
