@@ -74,8 +74,8 @@ function ArticleCard({ post }: Props) {
           <div className="flex  items-center gap-2">
           <Category text={category} />
        
-          <div className="text-[#FB5148]"><TbPointFilled /></div>
-          <div className="flex items-center  text-sm  uppercase dark:text-white text-black gap-2">
+          <div className=" dark:text-slate-400 text-slate-800"><TbPointFilled /></div>
+          <div className="dark:text-slate-400 text-slate-800 flex items-center  text-sm  uppercase   gap-2">
             <FaRegCalendarAlt />
             <div className=" mt-1   ">{formattedDate}</div>
           </div>
@@ -83,9 +83,9 @@ function ArticleCard({ post }: Props) {
 
         
           <Link className="no-underline"    href={`/posts/${slug}`}>
-            <div className="hover:text-primary dark:hover:text-primary transition 
+            <div className=" dark:hover:text-darkmode-text2 dark:text-white transition 
             duration-500 mt-3 font-lora font-bold   tracking-wide lg:text-5xl text-3xl 
-             text-black dark:text-white ">
+             text-black  ">
               {title}
             </div>
           </Link>

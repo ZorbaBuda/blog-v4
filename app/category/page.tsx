@@ -17,13 +17,13 @@ export default function CategoryPage() {
       <PageTitle title={'Categorias'}/>
       <div className='flex flex-wrap gap-2'>
       {categories.map((category) => (
-        <Category text={category}/>
+        <Category key={category} text={category}/>
       ))}
       </div>
       <PageTitle title={'Etiquetas'} />
       <div className='flex flex-wrap gap-2'>
       {tags.map((tag) => (
-        <Tag text={tag}/>
+        <Tag key={tag} text={tag}/>
       ))}
       </div>
       </div>

@@ -42,6 +42,14 @@ const config: Config = {
         'primary': '#C11812',
         "secondary": '#ECB320',
         gray: colors.gray,
+        text2: "#064635",
+       
+
+        darkmode: {
+           bg1: "#000000", //general background
+           text1: "#F1F4CD", //general text 
+           text2: "#D2DE32", // active, underlines...
+        }
       
       },
       

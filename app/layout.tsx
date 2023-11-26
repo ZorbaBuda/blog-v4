@@ -22,7 +22,7 @@ export default function RootLayout({
       <body>
         <ThemeProviders>
           <TwSizeIndicator />
-          <main className=" bg-white dark:bg-[#121212] text-black dark:text-white">
+          <main className=" bg-white dark:bg-darkmode-bg1 text-black dark:text-white">
             {children}
           </main>
         </ThemeProviders>

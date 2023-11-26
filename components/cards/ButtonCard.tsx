@@ -32,7 +32,7 @@ export const Button: React.FC<Props> = ({ href, children }) => {
         aria-label="button"
         type="button"
         className="group font-semibold inline-flex mt-5 text-xl font-crimson_text
-        dark:text-primary text-primary items-center gap-2  
+        dark:text-darkmode-text2 text-text2 items-center gap-2  
       "
       >
        

@@ -126,7 +126,7 @@ export function NavMenu({}) {
                       menu.children
                         ?.map(({ url }) => `${url}/`)
                         .includes(pathname)
-                        ? "text-[#FB5148]"
+                        ? " text-text2 dark:text-darkmode-text2"
                         : ""
                     }`}
                   >
@@ -149,7 +149,7 @@ export function NavMenu({}) {
                           className={`nav-dropdown-link block ${
                             (pathname === `${child}/` ||
                               pathname === child) &&
-                            "text-[#FB5148]"
+                            "text-text2 dark:text-darkmode-text2"
                           }`}
                         >
                           {child}
@@ -180,7 +180,7 @@ export function NavMenu({}) {
                     href={menu.url}
                     className={`nav-link block active ${
                       (pathname === `${menu.url}/` || pathname === menu.url) &&
-                      "text-[#FB5148]"
+                      "text-text2 dark:text-darkmode-text2"
                     }`}
                   >
                     {menu.name}

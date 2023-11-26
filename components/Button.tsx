@@ -31,8 +31,9 @@ export const Button: React.FC<Props> = ({ href, children }) => {
         aria-label="button"
         type="button"
         className="  mt-5 border-[1px] border-slate-400 rounded-sm text-sm 
-      tracking-wider  dark:text-slate-400 text-dark flex px-6 py-3 uppercase
-      hover:bg-[#f02b2b] hover:text-black group-dark:hover:text-black
+      tracking-wider  dark:text-slate-400 text-black flex px-6 py-3 uppercase
+      dark:hover:bg-darkmode-text2 dark:hover:text-black group-dark:hover:text-black
+      hover:bg-text2 hover:text-white
       
       "
       >

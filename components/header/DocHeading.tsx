@@ -1,11 +1,8 @@
 import { Post } from "@/.contentlayer/generated";
-import React from "react";
 import Image from "next/image";
 import getFormattedDate from "@/lib/getFormattedDate";
 import Category from "../tags/Category";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import "./patterns.scss";
-import { useTheme } from "next-themes";
 
 type Props = {
   post: Post;

@@ -42,14 +42,14 @@ const Breadcrumbs = ({ className }: { className?: string }) => {
             {index > 0 && <span className=" inline-block mr-1"><MdKeyboardArrowRight/></span>}
             {index !== parts.length - 1 ? (
               <Link
-                className="hover:text-[#FB5148] dark:hover:text-[#FB5148]
+                className="hover:text-text2 dark:hover:text-darkmode-text2
                 text-sm no-underline text-black dark:text-white "
                 {...attrs}
               >
                 {label}
               </Link>
             ) : (
-              <span className="text-sm text-[#FB5148] dark:text-[#FB5148] ">
+              <span className="text-sm text-text2 dark:text-darkmode-text2 ">
                 {label}
               </span>
             )}

@@ -52,7 +52,7 @@ const SearchNav = () => {
         onClick={onToggleNav}
         className="mr-5 inline-block border-r border-border pr-5 text-xl text-dark  dark:border-darkmode-border dark:text-white"
       >
-        <div className="hover:text-primary">
+        <div className="hover:text-text2 dark:hover:text-darkmode-text2 ">
           {" "}
           <IoSearch />
         </div>
