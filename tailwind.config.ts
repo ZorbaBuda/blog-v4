@@ -42,7 +42,9 @@ const config: Config = {
         'primary': '#C11812',
         "secondary": '#ECB320',
         gray: colors.gray,
-        text2: "#064635",
+        // text2: "#064635",
+        text2: "#FB5148",
+        
        
 
         darkmode: {
