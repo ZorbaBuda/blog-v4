@@ -73,7 +73,8 @@ export const Post = defineDocumentType(() => ({
         summary: { type: 'string' },
         bookAuthor: {type: 'string'},
         bookYear: {type:'string'},
-        pattern: {type:'string'}
+        draft: {type:'boolean'},
+        pattern: {type:'string'},
       },
     computedFields: {
         url: {

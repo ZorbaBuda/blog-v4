@@ -1,8 +1,10 @@
 import { Post } from "@/.contentlayer/generated";
 import Image from "next/image";
-import getFormattedDate from "@/lib/getFormattedDate";
 import Category from "../tags/Category";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { format, parseISO } from 'date-fns'
+import  es  from "date-fns/locale/es";
+
 
 type Props = {
   post: Post;
@@ -10,7 +12,12 @@ type Props = {
 
 export default function DocHeading({ post }: Props) {
   const imageUrl = `${process.env.GITHUB_URL_IMAGES}${post.coverImage}`;
-  const formattedDate = getFormattedDate(post.date);
+ 
+  const formattedDate = (
+    <time dateTime={post.date} className="ml-3">
+          {format(parseISO(post.date), 'd LLLL , yyyy', {locale: es})}
+        </time>
+  )
 
   return (
     <div className={``}>
@@ -31,7 +38,7 @@ export default function DocHeading({ post }: Props) {
               <Category text={post.category} />{" "}
               <div className="flex  text-sm  uppercase dark:text-slate-400 text-black">
                 <FaRegCalendarAlt />
-                <div className="tracking-wider  ml-3 ">{formattedDate}</div>
+               {formattedDate}
               </div>
             </div>
           </div>

@@ -1,12 +1,13 @@
 import Image from "next/image";
 import slugify from "slugify";
 import { Post } from "@/.contentlayer/generated";
-import getFormattedDate from "@/lib/getFormattedDate";
 import Link from "next/link";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { Button } from "./ButtonCard";
 import Category from "../tags/Category";
 import { TbPointFilled } from "react-icons/tb";
+import { format, parseISO } from "date-fns";
+import { es } from "date-fns/locale";
 
 type Props = {
   post: Post;
@@ -17,7 +18,10 @@ function ArticleCard({ post }: Props) {
 
   // TODO whas slugify means
   const titleSlug = slugify(title).toLowerCase();
-  const formattedDate = getFormattedDate(date);
+  const formattedDate = (
+    <time dateTime={date} className="mt-1">
+          {format(parseISO(post.date), 'd LLLL , yyyy', {locale: es})}
+        </time> )
   const imageUrl = `${process.env.NEXT_PUBLIC_GITHUB_URL_IMAGES}${coverImage}`;
  
   return (
@@ -77,7 +81,7 @@ function ArticleCard({ post }: Props) {
           <div className=" dark:text-slate-400 text-slate-800"><TbPointFilled /></div>
           <div className="dark:text-slate-400 text-slate-800 flex items-center  text-sm  uppercase   gap-2">
             <FaRegCalendarAlt />
-            <div className=" mt-1   ">{formattedDate}</div>
+           {formattedDate}
           </div>
          </div>
 
