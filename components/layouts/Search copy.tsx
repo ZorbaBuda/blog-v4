@@ -13,7 +13,7 @@ import {
 import ImageFallback from "@/components/helpers/ImageFallback";
 import { Container } from "./Container";
 import SearchNoImage from "@/public/no-search-found.png"
-import ArticleCardInSearch from "../cards/ArticleCardInSearch";
+
 
 const { summary_length, blog_folder } = config.settings;
 
@@ -134,8 +134,8 @@ const Search = ({ searchList }: Props) => {
           ) : (
             searchResults?.map(({ item }, index) => (
               // <div className="mb-12 md:col-6 lg:col-4" key={`search-${index}`}>
-            <div className="mt-10">
-              <ArticleCardInSearch post={item}   />
+            <div className="mt-10" key={index}>
+              {/* <ArticleCardInSearch  post={item}   /> */}
               </div>
               // <div className="flex flex-col">
               //   <div className="bg-body dark:bg-darkmode-body">

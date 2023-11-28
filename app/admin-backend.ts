@@ -9,14 +9,14 @@ export async function upsertPost(slug: string, post: string, sha?: string) {
     let buff = Buffer.from(post);
     let base64data = buff.toString('base64')
 
-    var resp = await octokit.request(`PUT /repos/pavlovtech/nextblog/contents/content/posts/${slug}`, {
-        owner: 'pavlovtech',
-        repo: 'NextBlog',
+    var resp = await octokit.request(`PUT /repos/ZorbaBuda/blog-v4/contents/content/posts/${slug}`, {
+        owner: 'ZorbaBuda',
+        repo: 'blog-v4',
         path: './posts',
         message: 'my commit message',
         committer: {
-          name: 'Alex Pavlov',
-          email: 'alexpppavlov93@gmail.com'
+          name: 'admin',
+          email: 'pacoaraz1311@gmail.com'
         },
         content: base64data,
         headers: {
@@ -35,14 +35,14 @@ export async function uploadFile(file: File) {
 
   const octokit = new Octokit({ auth: githubToken });
 
-  var resp = await octokit.request(`PUT /repos/pavlovtech/nextblog/contents/public/images/${file.name}`, {
-      owner: 'pavlovtech',
-      repo: 'NextBlog',
-      path: './public/assets',
+  var resp = await octokit.request(`PUT /repos/ZorbaBuda/blog-v4/contents/public/${file.name}`, {
+      owner: 'ZorbaBuda',
+      repo: 'blog-v4',
+      path: './public',
       message: 'added image',
       committer: {
-        name: 'Alex Pavlov',
-        email: 'alexpppavlov93@gmail.com'
+        name: 'admin',
+        email: 'pacoaraz1311@gmail.com'
       },
       content: base64data,
       headers: {
@@ -55,9 +55,9 @@ export async function uploadFile(file: File) {
 
 export async function getAllPosts() {
     const octokit = new Octokit({ auth: githubToken });
-    var resp = await octokit.request(`GET /repos/pavlovtech/nextblog/contents/content/posts`, {
-        owner: 'pavlovtech',
-        repo: 'NextBlog',
+    var resp = await octokit.request(`GET /repos/ZorbaBuda/blog-v4/contents/content/posts`, {
+        owner: 'ZorbaBuda',
+        repo: 'blog-v4',
         path: 'posts',
         headers: {
           'X-GitHub-Api-Version': '2022-11-28'
@@ -69,9 +69,9 @@ export async function getAllPosts() {
 
 export async function getPost(fileName: string) {
   const octokit = new Octokit({ auth: githubToken });
-  var resp = await octokit.request(`GET /repos/pavlovtech/nextblog/contents/content/posts/${fileName}`, {
-      owner: 'pavlovtech',
-      repo: 'NextBlog',
+  var resp = await octokit.request(`GET /repos/ZorbaBuda/blog-v4/contents/content/posts/${fileName}`, {
+      owner: 'ZorbaBuda',
+      repo: 'blog-v4',
       path: 'posts',
       headers: {
         'X-GitHub-Api-Version': '2022-11-28'
@@ -91,14 +91,14 @@ export async function getPost(fileName: string) {
 
 export async function deletePost(fileName: string, sha: string) {
   const octokit = new Octokit({ auth: githubToken });
-  var resp = await octokit.request(`DELETE /repos/pavlovtech/nextblog/contents/content/posts/${fileName}`, {
-    owner: 'pavlovtech',
-    repo: 'NextBlog',
+  var resp = await octokit.request(`DELETE /repos/ZorbaBuda/blog-v4/contents/content/posts/${fileName}`, {
+    owner: 'ZorbaBuda',
+    repo: 'blog-v4',
     path: './posts',
     message: 'my commit message',
     committer: {
-      name: 'Alex Pavlov',
-      email: 'alexpppavlov93@gmail.com'
+      name: 'admin',
+      email: 'pacoaraz1311@gmail.com'
     },
     headers: {
       'X-GitHub-Api-Version': '2022-11-28'
