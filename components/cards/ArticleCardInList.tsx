@@ -16,7 +16,7 @@ type Props = {
 function ArticleCard({ post }: Props) {
   const { coverImage, slug, date, title, summary,  category } = post;
 
-  // TODO whas slugify means
+  // TODO what slugify means
   const titleSlug = slugify(title).toLowerCase();
   const formattedDate = (
     <time dateTime={date} className="mt-1">

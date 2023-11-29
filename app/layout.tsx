@@ -2,7 +2,6 @@ import "./globals.scss";
 import type { Metadata } from "next";
 import { ThemeProviders } from "./theme-providers";
 import TwSizeIndicator from "@/components/helpers/TwSizeIndicator";
-import { NextAuthProvider } from "./admin/components/provider";
 
 export const metadata: Metadata = {
   title: "Neuro Primal",
