@@ -6,6 +6,7 @@ import config from "@/data/config.json";
 import menu from "@/data/menu.json";
 import { markdownify } from "@/lib/textConverter";
 import Link from "next/link";
+import BrandTitle from "./BrandTitle";
 
 const Footer = () => {
   const { copyright } = config.params;
@@ -15,9 +16,7 @@ const Footer = () => {
      
      <div className="flex flex-col justify-center">
         <div className=" min-w-full   items-center py-5 flex justify-around ">
-           <div className="  ">
-            <Logo />
-          </div> 
+           <BrandTitle />
           <div className="flex items-center  ">
             <ul>
               {menu.footer.map((menu) => (
@@ -35,7 +34,7 @@ const Footer = () => {
       </div>
       <div className="flex justify-center border-t border-border py-7 dark:border-[#3E3E3E]">
         <div className="gap-x-3 container flex justify-center text-[#B4AFB6] dark:text-darkmode-light">
-        <div>Primal Ideas</div>
+        <div>Primal Blog</div>
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
         </div>

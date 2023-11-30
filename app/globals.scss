@@ -94,6 +94,10 @@
   src: url("../public/fonts/Source_Serif_4/SourceSerif4-Regular.ttf");
 }
 
+@font-face {
+  font-family: "SYNE";
+  src: url("../public/fonts/Syne_Tactile/SyneTactile-Regular.ttf");
+}
 
 @layer components {
   .icon-menu::after {

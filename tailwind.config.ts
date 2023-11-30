@@ -34,7 +34,8 @@ const config: Config = {
         inter:['INTER'],
         inter_semibold:['INTER-SEMIBOLD'],
         crimson_pro:["CRIMSON_PRO"],
-        source_serif:["SOURCE-SERIF"]
+        source_serif:["SOURCE-SERIF"],
+        syne:["SYNE"]
       },
       colors: {
         transparent: 'transparent',

@@ -10,6 +10,7 @@ import config from '@/data/config.json'
 import SearchNav from "./SearchNav";
 import { allAbouts } from "@/.contentlayer/generated";
 import Logo from "../Logo";
+import BrandTitle from "../BrandTitle";
 
 // child navigation link interface
 export interface IChildNavigationLink {
@@ -78,7 +79,8 @@ export function NavMenu({}) {
      <header className={` header`}>
        {/* <header className="header">  */}
       <nav className="navbar container ">
-        <div className="order-1  sm:order-1 flex items-center"> <Logo /> </div>
+        {/* <div className="order-1  sm:order-1 flex items-center"> <Logo /> </div> */}
+        <div className="order-1  sm:order-1 flex items-center"> <BrandTitle /> </div>
         
              {/* navbar toggler */}
               <input id="nav-toggle" type="checkbox" className="hidden" /> 
