@@ -35,11 +35,7 @@ export default function About() {
                 /> */}
       </article>
 
-      <Link href="/patterns" passHref>
-        <span className="text-black dark:text-white text-3xl ml-3">
-          PATTERNS
-        </span>
-      </Link>
+     
 
     </Container>
   );

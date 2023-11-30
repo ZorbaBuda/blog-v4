@@ -5,7 +5,7 @@ import MDXComponents from "@/components/mdx-component";
 import DocHeading from "@/components/header/DocHeading";
 import TableOfContents from "@/components/TableOfContents";
 import ScrollTop from "@/components/ScrollTop";
-import Tag from "@/components/tags/Tag";
+// import Tag from "@/components/tags/Tag";
 import { Container } from "@/components/layouts/Container";
 import { BsFillTagsFill} from 'react-icons/bs'
 import siteMetadata from "@/data/siteMetadata";
@@ -155,7 +155,7 @@ const BlogDetails: React.FC<BlogDetailsProps> = async ({ params }) => {
           </article>
       
 
-        <article className="mt-10 flex flex-wrap text-black dark:text-white ">
+        {/* <article className="mt-10 flex flex-wrap text-black dark:text-white ">
           <div className="flex justify-between items-center">
             <BsFillTagsFill />
              <div className="ml-3">Etiquetas:</div>
@@ -166,7 +166,7 @@ const BlogDetails: React.FC<BlogDetailsProps> = async ({ params }) => {
             <Tag key={tag} text={tag} />
           ))}
           </div>
-        </article>
+        </article> */}
       </div>
       </div>
     </Container>

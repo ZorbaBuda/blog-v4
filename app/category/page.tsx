@@ -3,13 +3,13 @@ import { Container } from '@/components/layouts/Container';
 import { allAbouts } from '@/.contentlayer/generated';
 import tagFiles from '@/lib/tag-files.json'
 import Category from '@/components/tags/Category';
-import Tag from '@/components/tags/Tag';
+// import Tag from '@/components/tags/Tag';
 
 
 export default function CategoryPage() {
   
   const categories = allAbouts[0].categories
-  const tags = Object.keys(tagFiles)
+  // const tags = Object.keys(tagFiles)
 
   return (
     <Container>
@@ -20,12 +20,12 @@ export default function CategoryPage() {
         <Category key={category} text={category}/>
       ))}
       </div>
-      <PageTitle title={'Etiquetas'} />
+      {/* <PageTitle title={'Etiquetas'} />
       <div className='flex flex-wrap gap-2'>
       {tags.map((tag) => (
         <Tag key={tag} text={tag}/>
       ))}
-      </div>
+      </div> */}
       </div>
     </Container>
   )
